@@ -15,4 +15,16 @@ public class ListsTest {
 		CopyOnWriteArrayList<Integer> copuOnWriteLst = Lists.newCopyOnWriteArrayList(intLst);
 		System.out.println(copuOnWriteLst);
 	}
+	
+	@Test
+	public void arrayToLstTest() {
+		Integer[] intArray = new Integer[] {1,2,3};
+		List<Integer> intLst = Lists.asList(0, intArray);
+		System.out.println(intLst);
+		try {
+			intLst.add(4);
+		}catch(UnsupportedOperationException ex) {
+			System.out.println(intLst);
+		}
+	}
 }
