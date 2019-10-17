@@ -16,4 +16,18 @@ public class BiMapTest {
 		BiMap<Integer,String> bimap_inverse = bimap.inverse();
 		System.out.println(bimap_inverse);
 	}
+	
+	@Test
+	public void testForcePut() {
+		BiMap<String,Integer> bimap = HashBiMap.create();
+		Integer i = new Integer(1);
+		bimap.put("samsung", i);
+		try {
+			bimap.put("vivo", i);
+		}catch(IllegalArgumentException ex) {
+			ex.printStackTrace();
+		}
+		bimap.forcePut("vivo", i);
+		System.out.println(bimap);
+	}
 }
