@@ -37,7 +37,8 @@ public class JoinerTest {
         List<String> lst = Lists.newArrayList("samsung","vivo","nokia",null);
         StringBuilder sb = new StringBuilder();
         joiner.appendTo(sb, lst);
-        System.out.println(sb);
+        //System.out.println(sb);
+        assertThat(sb.toString(), is("samsung,vivo,nokia"));
     }
     
     
@@ -45,6 +46,7 @@ public class JoinerTest {
     public void joinMap(){
         MapJoiner mapJoin = Joiner.on(",").withKeyValueSeparator("=");
         Map<String,Integer> wordcount = new HashMap<String,Integer>(){{put("samsung",1);put("vivo",2);}};
-        System.out.println(mapJoin.join(wordcount));
+        //System.out.println(mapJoin.join(wordcount));
+        assertThat(mapJoin.join(wordcount), is("samsung=1,vivo=2"));
     }
 }
