@@ -1,5 +1,8 @@
 package guava_learning.base;
 
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,14 +19,16 @@ public class JoinerTest {
     public void joinLst(){
         Joiner joiner = Joiner.on(",").skipNulls();
         List<String> lst = Lists.newArrayList("samsung","vivo","nokia",null);
-        System.out.println(joiner.join(lst));
+        //System.out.println(joiner.join(lst));
+        assertThat(joiner.join(lst), is("samsung,vivo,nokia"));
     }
     
     @Test
     public void joinArray(){
         Joiner joiner = Joiner.on(",").skipNulls();
         Integer[] intArray = new Integer[]{1,2,3,null};
-        System.out.println(joiner.join(intArray));
+        //System.out.println(joiner.join(intArray));
+        assertThat(joiner.join(intArray), is("1,2,3"));
     }
     
     @Test
