@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	
 	<properties>
-		<lucene.version>4.7.0</lucene.version>
+		<lucene.version>8.4.0</lucene.version>
 		<guava.version>26.0-jre</guava.version>
 	</properties>
 	
