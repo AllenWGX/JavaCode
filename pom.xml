@@ -7,7 +7,7 @@
 	
 	<properties>
 		<lucene.version>4.7.0</lucene.version>
-		<guava.version>26.0-jre</guava.version>
+		<guava.version>29.0-jre</guava.version>
 	</properties>
 	
 	<dependencies>
